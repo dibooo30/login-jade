@@ -1,0 +1,27 @@
+extends layout
+
+block content
+
+    br
+    br
+    if errors
+     each error, i in errors
+      div.success.alert.alert-danger #{error.msg}
+    form.fo(action='/users/register', method='post')
+        .form-group
+            label(for='username') user name :
+            input.form-control(type='text', name='username', placeholder='enter your name')
+        .form-group
+            label(for='email') email :
+            input.form-control(type='email', name='email', aria-describedby='helpId', placeholder='enter your email')
+        .form-group
+            label(for='password') password :
+            input.form-control(type='password', name='password', placeholder='enter your password')
+        .form-group
+            label(for='password2') re password :
+            input.form-control(type='password', name='password2', placeholder='re enter your password')
+        .form-group
+            label(for='image') photo :
+            input.form-control(type='file', name='image', placeholder='select photo')
+        .form-group
+            input.btn-dark.float-right(type='submit', value='register')

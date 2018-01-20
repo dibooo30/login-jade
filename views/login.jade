@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+    
+    form.fo(action='/users/login', method='post')
+        .form-group
+            label(for='username') user name :
+            input.form-control(type='text', name='username', placeholder='enter your email')
+        .form-group
+            label(for='password') password :
+            input.form-control(type='password', name='password', placeholder='enter your password')
+        input.btn.btn-dark.float-right(type='submit', value='login')
